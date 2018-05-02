@@ -2,8 +2,41 @@
 @import 'variables.scss';
 @import 'templates.scss';
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
 //Main
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+img {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+}
+
+//Login
+body.login {
+    width: 100%;
+    height: 100%;
+    background: $dark;
+    position: fixed;
+    .login_wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .login_window {
+            @extend %vertical-center;
+            width: 30%;
+            height: 100%;
+            background: $darkest;
+            text-align: center;
+            border-left: 1px solid $smooth;
+            border-right: 1px solid $smooth;
+            .login_logotype { 
+                width: 50%;
+            }
+        }
+    }
 }
