@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAKA,KAAA,KACI,OAAA,EACA,QAAA","file":"style.min.css","sourcesContent":["//Imports\r\n@import 'variables.scss';\r\n@import 'templates.scss';\r\n\r\n//Main\r\nhtml, body {\r\n    margin: 0;\r\n    padding: 0;\r\n}"]}
