@@ -18,8 +18,8 @@
 </head>
 <body class="login">
     <div class="login_wrapper">
-        <video class="login_video_background" src="https://www.youtube.com/watch?v=5_hRB0Kj1eo"></video>
-        <div class="login_stripe"></div>
+        <!--<video class="login_video_background" src="./static/videos/video1.mp4" autoplay></video>
+        <div class="login_stripe"></div>-->
         <div class="login_window">
             <img class="login_logotype" src="./static/images/kgb-logotype1.png">
             <form class="login_form" method="POST" action="index.php">
