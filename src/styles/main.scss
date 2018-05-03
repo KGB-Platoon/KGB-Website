@@ -9,33 +9,107 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans Condensed', sans-serif;
+    color: $fair;
 }
 img {
     position: relative;
     max-width: 100%;
     margin: 0;
 }
+h1,h2,h3,h4,h5,h6 {
+    @extend %title;
+}
+input {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
 
 //Login
 body.login {
     width: 100%;
     height: 100%;
-    background: $dark;
+    background: url('./../../static/images/night-street-city.png');
+    background-size: 100%;
     position: fixed;
     .login_wrapper {
         position: relative;
         width: 100%;
         height: 100%;
+        .login_video_background {
+            @extend %vertical-center;
+            z-index: 80;
+            width: 100%;
+        }
+        .login_stripe {
+            @extend %vertical-center;
+            z-index: 90;
+            background: $special;
+            height: 5vw;
+            width: 100%;
+        }
         .login_window {
             @extend %vertical-center;
-            width: 30%;
-            height: 100%;
+            z-index: 100;
             background: $darkest;
             text-align: center;
             border-left: 1px solid $smooth;
             border-right: 1px solid $smooth;
             .login_logotype { 
                 width: 50%;
+            }
+            .login_form {
+                .login_form_table {
+                    width: 100%;
+                    margin: 20px 0px;
+                    tr {
+                        td:nth-of-type(1){
+                            text-align: right;
+                            padding-right: 10px;
+                            width: 45%;
+                        }
+                        td:nth-of-type(2){
+                            text-align: left;
+                            padding-left: 10px;
+                            width: 55%;
+                        }
+                    }
+                }
+                h2 {
+                    font-size: 1.2em;
+                    display: inline;
+                }
+                .login_form_forget {
+                    display: block;
+                    margin: 3px;
+                    font-size: 0.95em;
+                    &:hover {
+                        color: $special;
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                .login_form_enter {
+                    display: inline;
+                    padding: 0.3em;
+                    font-size: 1em;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    color: $fair;
+                    border-bottom: 1px solid $special;
+                }  
+                .login_form_proceed {
+                    background: $special;
+                    border: none;
+                    outline: none;
+                    margin: 20px auto;
+                    padding: 5px 60px;
+                    font-size: 1em;
+                    font-weight: bold;
+                    display: block;
+                    &:hover {
+                        box-shadow: 0px 0px 7px 0px rgba($special,0.6);
+                    }
+                } 
             }
         }
     }
