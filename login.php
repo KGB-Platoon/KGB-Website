@@ -1,6 +1,14 @@
 <!-- SERVER -->
 <?php
 
+    session_start();
+
+    if(isset($_POST['submit'])){
+        
+        $passedLogin = strip_tags($_POST['login']);
+        $passedPassword = strip_tags($_POST['password']);
+        
+    }
 ?>
 <!-- CLIENT -->
 <!DOCTYPE html>
@@ -22,23 +30,23 @@
         <div class="login_stripe"></div>-->
         <div class="login_window">
             <img class="login_logotype" src="./static/images/kgb-logotype1.png">
-            <form class="login_form" method="POST" action="index.php">
+            <form class="login_form" method="POST" action="login.php">
                 <h1>Login to KGB system</h1>
                 <table class="login_form_table">
                     <tbody>
                         <tr>
                             <td><h2>Agent ID</h2></td>
-                            <td><input class="login_form_enter" type="text" placeholder="Enter ID"></td>
+                            <td><input name="login" class="login_form_enter" type="text" placeholder="Enter ID"></td>
                         </tr>
                         <tr>
                             <td><h2>Secret password</h2></td>
-                            <td><input class="login_form_enter" type="password" placeholder="Enter password"></td>
+                            <td><input name="password"class="login_form_enter" type="password" placeholder="Enter password"></td>
                         </tr>
                     </tbody>
                 </table>
                 <a class="login_form_forget">Don't remember your password?</a>
                 <a class="login_form_forget">Don't remember your ID?</a>
-                <input class="login_form_proceed" type="submit" value="Proceed">
+                <input name="submit" class="login_form_proceed" type="submit" value="Proceed">
             </form>
         </div>
     </div>
