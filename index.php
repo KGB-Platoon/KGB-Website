@@ -2,8 +2,8 @@
 <?php
     session_start();
     if (isset($_SESSION['id'])){
-        $userId = $_SESSION['id'];
-        $username = $_SESSION['username'];
+        $dbId = $_SESSION['id'];
+        $dbLogin = $_SESSION['login'];
     }
     else {
         header('Location: login.php');

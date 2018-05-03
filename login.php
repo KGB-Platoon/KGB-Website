@@ -7,7 +7,24 @@
         
         $passedLogin = strip_tags($_POST['login']);
         $passedPassword = strip_tags($_POST['password']);
+        include_once('./php/connection.php');
+
+        $sql = "SELECT ID,Login,Password FROM users where Login = '$passedLogin' LIMIT 1";
+        $query = mysqli_query($db, $sql);
         
+        if($query) {
+            $row = mysqli_fetch_row($query);
+            $dbId = $row[0];
+            $dbLogin = $row[1];
+            $dbPassword = $row[2];
+        }
+        echo $dbLogin;
+
+        if($passedLogin == $dbLogin && $passedPassword == $dbPassword){
+            $_SESSION['id'] = $dbId;
+            $_SESSION['login'] = $dbLogin;
+            header('Location: index.php');
+        }
     }
 ?>
 <!-- CLIENT -->
