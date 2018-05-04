@@ -18,11 +18,11 @@
             $dbLogin = $row[1];
             $dbPassword = $row[2];
         }
-        echo $dbLogin;
 
         if($passedLogin == $dbLogin && $passedPassword == $dbPassword){
             $_SESSION['id'] = $dbId;
             $_SESSION['login'] = $dbLogin;
+            $_SESSION['password'] = $dbPassword;
             header('Location: index.php');
         }
     }
@@ -43,10 +43,11 @@
 </head>
 <body class="login">
     <div class="login_wrapper">
-        <!--<video class="login_video_background" src="./static/videos/video1.mp4" autoplay></video>
-        <div class="login_stripe"></div>-->
+        <audio src="./static/assets/sounds/suspense-music.mp3" type="audio/mpeg" volume="0.5" autoplay ></audio>
+        <!--<video class="login_video_background" src="./static/assets/videos/video1.mp4" autoplay></video>-->
+        <div class="login_stripe"></div>
         <div class="login_window">
-            <img class="login_logotype" src="./static/images/kgb-logotype1.png">
+            <img class="login_logotype" src="./static/assets/images/kgb-logotype1.png">
             <form class="login_form" method="POST" action="login.php">
                 <h1>Login to KGB system</h1>
                 <table class="login_form_table">
